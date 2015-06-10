@@ -4,35 +4,36 @@
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="member">
+	<resultMap type="mvo" id="memberRM">
+		<result property="id" column="member_id" />
+		<result property="level" column="member_level" />
+		<result property="registerDate" column="register_date" />
+	</resultMap>
+	<select id="findById"  resultMap="memberRM">
+		select * from member where
+		member_id=#{value}
+	</select>
+
+	<!-- 회원가입 -->
+	<insert id="registerMember" parameterType="mvo">
+		insert into
+		member(member_id, password, nick, name, email, gender, answer,
+		member_level, register_date, love)
+		values(#{id}, #{password},#{nick},
+		#{name}, #{email}, #{gender}, #{answer}, 1, sysdate, 0 )
+	</insert>
+	<select id="idCheck" resultType="int">
+		select count(*) from member
+		where member_id=#{value}
+	</select>
+
+	<!-- 로그인 -->
+	<select id="login" resultMap="memberRM">
+		select * from member where
+		member_id=#{id} and password=#{password}
+	</select>
+	<delete id="deleteMember" parameterType="mvo">
+		delete from member where member_id=#{id} and password=#{password}
+	</delete>
+
 </mapper>
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
