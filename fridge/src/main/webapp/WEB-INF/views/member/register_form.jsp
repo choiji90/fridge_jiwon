@@ -38,6 +38,7 @@
 			});//ajax
 		});//keyup
 		$("#password").keyup(function(){
+			$("#pass_error").html("");
 			 var password= $("#password").val();
 			 if(password.length<4 || password.length>10){
 		            $("#passwordSizeView").html("비밀번호 4자이상 10자이하");
@@ -57,9 +58,13 @@
 	            $("#passwordCheckView").html("같네요");
 	         }
 	      }); 
+		$("#cancelBtn").click(function(){
+			location.href="${initParam.root}home.do";
+		});
+		
 	});//ready
 </script>
-<form:form action="${initParam.root}member_register.do" commandName="memberVO">
+<form:form action="${initParam.root}member_register.do" commandName="memberVO" >
  아이디 :   <form:input path="id" id="id" />
   <font color="red"><form:errors id="id_error" path="id"></form:errors></font>
   <span id="idCheckView"></span><br>   
@@ -69,17 +74,20 @@
 패스워드 확인 <input type="password" id="password2">
    <span id="passwordCheckView"></span> <br>
  이름 : <form:input path="name" id="name" />
-   <font color="red"><form:errors path="name"></form:errors></font><br>   
+   <font color="red"><form:errors id="id_error" path="name"></form:errors></font><br>   
  닉네임 : <form:input path="nick" id="nick" /> 
-   <font color="red"><form:errors path="name"></form:errors></font><br>   
-  성별 : 남<input type="radio" value="1" name="gender">
-  			 여<input type="radio" value="2" name="gender"><br>
+   <font color="red"><form:errors path="nick"></form:errors></font><br>   
+  성별 : 남<input type="radio" value=1 name="gender" id="gender">
+  			 여<input type="radio" value=2 name="gender" id="gender"> 
+  			 <font color="red"><form:errors path="gender"></form:errors></font><br>   
  e-mail : <form:input path="email" id="email" />
    <font color="red"><form:errors path="email"></form:errors></font><br>   
  질문 : 가장 좋아하는 요리는?<br>
- 답 : <form:input path="answer" id="answer" />
-   <font color="red"><form:errors path="email"></form:errors></font><br>   
+ 답 : <form:input path="answer" id="answer" /> 
+   <font color="red"><form:errors path="answer"></form:errors></font><br>   
+ 아이디/비밀번호 찾기에 사용됩니다.  <br>
    <input type="submit" value="회원가입">
+   <input type="button" value="취소" id="cancelBtn">
 </form:form>
 </body>
 </html>

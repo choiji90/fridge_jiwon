@@ -5,13 +5,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<script type="text/javascript">
+	alert("정보가 올바르지 않습니다.");
+	location.href="${initParam.root}member_loginForm.do";
+</script>
 </head>
 <body>
-정말 탈퇴하시겠습니까? <br>
-<form action="${initParam.root}member_passwordCheck_delete.do">
-비밀번호 <input type="text"  name="password"> 
-<input type="hidden" name="id" value="${sessionScope.mvo.id}">
-<input type="submit" value="탈퇴하기">
-</form>
+
 </body>
 </html>

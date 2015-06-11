@@ -20,19 +20,27 @@ public class MemberController {
 	@Resource
 	private MemberService memberService;
 
+	//회원가입form.jsp로
 	@RequestMapping("member_registerForm.do")
 	public ModelAndView registerForm() {
 		return new ModelAndView("member_register_form", "memberVO",
 				new MemberVO());
 	}
 
+
 	@RequestMapping("member_loginForm.do")
 	public String loginForm() {
 		return "member_login_form";
 	}
 
+	@RequestMapping("member_joinclause_view.do")
+	public String joinClause(){
+		return "member_joinclause_view";
+	}
+	//회원가입 (redirect)
 	@RequestMapping(value = "member_register.do", method = RequestMethod.POST)
 	public ModelAndView register(@Valid MemberVO vo, BindingResult result) {
+		System.out.println(vo);
 		if (result.hasErrors()) {
 			return new ModelAndView("member_register_form");
 		}
@@ -40,6 +48,7 @@ public class MemberController {
 		return new ModelAndView("redirect:regiResult.do?id=" + vo.getId());
 	}
 
+	//회원가입완료
 	@RequestMapping("regiResult.do")
 	public ModelAndView regiResult(HttpServletRequest request,
 			HttpServletResponse response, MemberVO vo) {
@@ -53,13 +62,14 @@ public class MemberController {
 		String id = request.getParameter("id");
 		return memberService.idCheck(id);
 	}
-
+	
+	//로그인
 	@RequestMapping("login.do")
 	public String login(MemberVO vo, HttpServletRequest request) {
 		MemberVO mvo = memberService.login(vo);
 		//System.out.println(mvo);
 		if (mvo == null)
-			return "member_login_form";
+			return "member_login_fail";
 		else {
 			HttpSession session = request.getSession();
 			session.setAttribute("mvo", mvo);
@@ -95,12 +105,10 @@ public class MemberController {
 		System.out.println(vo.getPassword());
 		System.out.println(vo.getId());
 		MemberVO mvo = memberService.login(vo);
-		
 		if (mvo == null) {
 			return "member_password_check_fail";
 		} else
 			memberService.deleteMember(mvo);
 			return "member_passwordCheck_delete";
-
 	}
 }

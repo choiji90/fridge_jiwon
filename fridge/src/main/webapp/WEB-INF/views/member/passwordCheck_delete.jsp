@@ -8,7 +8,8 @@
 </head>
 <body>
 	
-정상적 탈퇴 ㅇㅇ
+정상적으로 탈퇴되었습니다.
+감사합니다.
 <a href="${initParam.root}home.do">홈으로</a>
 </body>
 </html>
