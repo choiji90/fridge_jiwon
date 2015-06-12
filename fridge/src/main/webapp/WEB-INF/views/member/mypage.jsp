@@ -1,12 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
 <script type="text/javascript" src="resources/jquery-1.11.0.js"></script>
 <script type="text/javascript"> 
 	$(document).ready(function(){
@@ -18,8 +12,7 @@
 		});
 	});
 </script>
-</head>
-<body>
+
 	아이디 : ${sessionScope.mvo.id}
 	<br> 이름 : ${sessionScope.mvo.name}
 	<br> 닉네임: ${sessionScope.mvo.nick}
@@ -42,5 +35,3 @@
 	<input type="button" value="탈퇴하기" id="deleteBtn">
 	<%-- <a href="${initParam.root}member_updateMemberForm.do">수정하기</a>
 	<a href="${initParam.root}member_deleteMemberForm.do">탈퇴하기</a> --%>
-</body>
-</html>

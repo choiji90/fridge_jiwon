@@ -1,6 +1,8 @@
 select *from member;
 drop table member;
 
+select id from member where
+select member_id from member where name='김진선' and email='jinsun@gmail.com' and answer='김치볶음밥'; 
 create table member(
 	member_id varchar2(50) primary key,
 	password varchar2(50) not null,

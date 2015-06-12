@@ -23,9 +23,14 @@ public class MemberDAOImpl implements MemberDAO {
 		sqlSessionTemplate.insert("member.registerMember",vo);
 		
 	}
-	
+	@Override
 	public String idCheck(String id) {
 		int count=sqlSessionTemplate.selectOne("member.idCheck",id);
+		return (count==0) ? "ok":"fail"; 		
+	}
+	@Override
+	public String nickCheck(String nick){
+		int count=sqlSessionTemplate.selectOne("member.nickCheck",nick);
 		return (count==0) ? "ok":"fail"; 		
 	}
 	@Override
@@ -40,5 +45,21 @@ public class MemberDAOImpl implements MemberDAO {
 	public void deleteMember(MemberVO vo) {
 		sqlSessionTemplate.delete("member.deleteMember",vo);
 	}
+	
+	 @Override
+	   public void updateMember(MemberVO vo) {
+	      System.out.println("updateDAOImpl");
+	      System.out.println("update"+vo);
+	      sqlSessionTemplate.update("member.updateMember",vo);   
+	   }
+	 
+	@Override
+	public String findMyId(MemberVO vo) {
+		return sqlSessionTemplate.selectOne("member.findMyId",vo);
+	}
 
+	 @Override
+	   public String findMyPassword(MemberVO vo) {
+	      return sqlSessionTemplate.selectOne("member.findMyPassword", vo);
+	   }
 }

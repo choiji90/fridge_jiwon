@@ -10,4 +10,8 @@ public interface MemberService {
 	public MemberVO login(MemberVO vo);
 	public MemberVO myPage();
 	public void deleteMember(MemberVO vo);
+	void updateMember(MemberVO vo);
+	public String nickCheck(String nick);
+	public String findMyId(MemberVO vo);
+	public String findMyPassword(MemberVO vo);
 }

@@ -1,3 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-비밀번호 틀려서 진행xxx
+
+가입성공!<br>
+<a href="${initParam.root}home.do"> 홈으로 </a>

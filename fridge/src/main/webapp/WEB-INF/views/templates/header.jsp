@@ -11,8 +11,8 @@
 			<a href="${initParam.root}member_loginForm.do">로그인</a>
 		</c:when>
 		<c:otherwise>
-		${sessionScope.mvo.name}님 접속중!!
-		<a href="${initParam.root}member_myPage.do">마이페이지</a>
+		${sessionScope.mvo.nick}님 접속중!!
+		<a href="${initParam.root}member_mypage.do">마이페이지</a>
 			<a href="${initParam.root}member_logout.do">로그아웃</a>
 		</c:otherwise>
 	</c:choose>
