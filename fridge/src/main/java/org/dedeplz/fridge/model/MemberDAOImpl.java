@@ -71,4 +71,14 @@ public class MemberDAOImpl implements MemberDAO {
 	   public int totalContent(){
 	      return sqlSessionTemplate.selectOne("member.totalContent");
 	   }
+	@Override
+	public int loveCount(MemberVO vo) {
+		return sqlSessionTemplate.selectOne("member.loveCount",vo);
+	}
+	@Override
+	public void updateMemberGrade(MemberVO vo){
+		System.out.println("uuphyiyiuigyu"+vo);
+		sqlSessionTemplate.update("member.updateMemberGrade",vo);
+		
+	}
 }

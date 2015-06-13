@@ -1,5 +1,6 @@
 package org.dedeplz.fridge.model;
 
+import java.io.File;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -10,7 +11,8 @@ import org.springframework.stereotype.Service;
 public class MemberServiceImpl implements MemberService {
 	@Resource
 	private MemberDAO memberDAO;
-
+	/*@Resource
+	private String uploadPath;*/
 	/*
 	 * (non-Javadoc)
 	 * 
@@ -24,6 +26,8 @@ public class MemberServiceImpl implements MemberService {
 	@Override
 	public void registerMember(MemberVO vo) {
 		memberDAO.registerMember(vo);
+		/*File file=new File(uploadPath+vo.getId());
+		file.mkdir();*/
 	}
 
 	@Override
@@ -77,4 +81,14 @@ public class MemberServiceImpl implements MemberService {
 	      ListVO lvo=new ListVO(list,paging);
 	      return lvo;
 	   }
+
+	@Override
+	public int loveCount(MemberVO vo) {
+		System.out.println("좋아요수(service) : "+memberDAO.loveCount(vo));
+		return memberDAO.loveCount(vo);
+	}
+	@Override
+	public void updateMemberGrade(MemberVO vo){
+		memberDAO.updateMemberGrade(vo);
+	}
 }

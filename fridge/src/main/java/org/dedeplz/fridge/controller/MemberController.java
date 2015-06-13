@@ -111,11 +111,32 @@ public class MemberController {
 	@RequestMapping("login.do")
 	public String login(MemberVO vo, HttpServletRequest request) {
 		MemberVO mvo = memberService.login(vo);
-		// System.out.println(mvo);
 		if (mvo == null)
 			return "member_login_fail";
 		else {
 			HttpSession session = request.getSession();
+			int love = memberService.loveCount(mvo);
+			if ((mvo.getLevel()==1)&&(love >= 10)) {
+				memberService.updateMemberGrade(mvo);
+				mvo.setLevel(mvo.getLevel()+1);
+				session.setAttribute("mvo", mvo);
+				return "member_upgrade_result";
+			}else if ((mvo.getLevel()==2)&&(love >= 30)) {
+				memberService.updateMemberGrade(mvo);
+				mvo.setLevel(mvo.getLevel()+1);
+				session.setAttribute("mvo", mvo);
+				return "member_upgrade_result";
+			}else if((mvo.getLevel()==3)&&(love >= 50)) {
+				memberService.updateMemberGrade(mvo);
+				mvo.setLevel(mvo.getLevel()+1);
+				session.setAttribute("mvo", mvo);
+				return "member_upgrade_result";
+			}else if((mvo.getLevel()==4)&&(love >= 80)) {
+				memberService.updateMemberGrade(mvo);
+				mvo.setLevel(mvo.getLevel()+1);
+				session.setAttribute("mvo", mvo);
+				return "member_upgrade_result";
+			}
 			session.setAttribute("mvo", mvo);
 			return "member_login_ok";
 		}
@@ -161,7 +182,7 @@ public class MemberController {
 		vo.setId(vo1.getId());
 		memberService.updateMember(vo);
 		session.setAttribute("mvo", vo);
-		return new ModelAndView("member_mypage");
+		return new ModelAndView("member_upgrade_result");
 	}
 
 	/**

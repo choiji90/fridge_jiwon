@@ -67,22 +67,36 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<!-- 비밀번호 찾기 -->
 	<select id="findMyPassword" parameterType="mvo" resultType="string">
 		select password from member
-		where member_id=#{id} and name=#{name} and email=#{email} and
+		where member_id=#{id} and name=#{name} and
+		email=#{email} and
 		answer=#{answer}
 	</select>
 
-<select id="getMemberList" resultMap="memberRM">
-   select member_id,name,nick,gender,email,member_level,register_date
-            FROM(
-               select member_id,name,nick,gender,email,member_level,register_date, CEIL(rownum/10) AS page
-                  from( 
-                     select member_id,name,nick,gender,email,member_level,to_char(register_date,'YYYY.MM.DD') as register_date
-                        from member order by register_date desc
-                  )
-            ) where page=#{value}
-   </select>
-   
-      <select id="totalContent" resultType="int">
-      select count(*) from member
-   </select>   
+	<select id="getMemberList" resultMap="memberRM">
+		select member_id,name,nick,gender,email,member_level,register_date
+		FROM(
+		select member_id,name,nick,gender,email,member_level,register_date,
+		CEIL(rownum/10) AS page
+		from(
+		select
+		member_id,name,nick,gender,email,member_level,to_char(register_date,'YYYY.MM.DD')
+		as register_date
+		from member order by register_date desc
+		)
+		) where page=#{value}
+	</select>
+
+	<select id="totalContent" resultType="int">
+		select count(*) from member
+	</select>
+	
+	<!-- 좋아요 수 count하기 -->
+	<select id="loveCount" parameterType="mvo"  resultType="int">
+		select love from member where member_id=#{id} and password=#{password}
+	</select>
+	
+	<!-- 회원 등급 자동 업그레이드 -->
+	<update id="updateMemberGrade" parameterType="mvo">
+			update member set member_level=member_level+1 where member_id=#{id} and password=#{password}
+	</update>
 </mapper>

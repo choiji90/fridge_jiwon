@@ -40,5 +40,10 @@
 	<bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
 		<constructor-arg ref="sqlSessionFactory"></constructor-arg>
 	</bean>
-
+<!-- 	<bean id="uploadPath" class="java.lang.String">
+		<constructor-arg>
+			<value>C:\\Users\\KOSTA\\git\\fridge_jiwon\\fridge\\src\\main\\webapp\\upload\\</value>
+		</constructor-arg>
+	</bean>
+ -->
 </beans>

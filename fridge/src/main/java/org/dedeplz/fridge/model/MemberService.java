@@ -15,4 +15,6 @@ public interface MemberService {
 	public String findMyId(MemberVO vo);
 	public String findMyPassword(MemberVO vo);
 	ListVO getMemberList(String pageNo);
+	public int loveCount(MemberVO vo);
+	public void updateMemberGrade(MemberVO vo);
 }

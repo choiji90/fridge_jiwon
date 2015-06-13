@@ -1,5 +1,7 @@
 select *from member;
 drop table member;
+update member set love=88, member_level=4 where member_id='subsub'
+select love from member where member_id='java' and password='1234'
 
 select id from member where
 select member_id from member where name='김진선' and email='jinsun@gmail.com' and answer='김치볶음밥'; 
@@ -32,6 +34,19 @@ create table recipe(
  select * from member where member_id='java'
 insert into member(member_id, password, nick, name, email, gender, answer, member_level, register_date, love)
 values('java', '1234', 'abcd', '�쒖�誘�, 'java@gmail.com', 0, '�뚯뒪��, 5, sysdate, 0 )
+
+
+insert into member(member_id, password, nick, name, email, gender, answer, member_level, register_date, love)
+values('java3', '1234', 'abcd', 'java3', 'java@gmail.com', 2, '밥', 1, sysdate, 12)
+
+insert into member(member_id, password, nick, name, email, gender, answer, member_level, register_date, love)
+values('java4', '1234', 'abcd', 'java3', 'java@gmail.com', 3, '밥', 1, sysdate, 57)
+
+insert into member(member_id, password, nick, name, email, gender, answer, member_level, register_date, love)
+values('java3', '1234', 'abcd', 'java3', 'java@gmail.com', 2, '밥', 1, sysdate, 12)
+
+
+
 
 insert into member(member_id, password, nick, name, email, gender, answer, member_level, register_date, love)
 values('dindony', '1234', '吏꾩뜫', '源�쭊��, 'jinsun@gmail.com', 2, '源�튂蹂띠쓬諛�, 5, sysdate, 0 )

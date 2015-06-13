@@ -15,4 +15,6 @@ public interface MemberDAO {
 	public String findMyPassword(MemberVO vo);
 	List<MemberVO> getMemberList(String pageNo);
 	public int totalContent();
+	public int loveCount(MemberVO vo);
+	public void updateMemberGrade(MemberVO vo);
 }
