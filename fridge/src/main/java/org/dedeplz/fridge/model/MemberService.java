@@ -14,4 +14,5 @@ public interface MemberService {
 	public String nickCheck(String nick);
 	public String findMyId(MemberVO vo);
 	public String findMyPassword(MemberVO vo);
+	ListVO getMemberList(String pageNo);
 }

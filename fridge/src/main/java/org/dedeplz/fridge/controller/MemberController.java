@@ -74,7 +74,7 @@ public class MemberController {
 	public ModelAndView regiResult(HttpServletRequest request,
 			HttpServletResponse response, MemberVO vo) {
 		MemberVO mvo = memberService.findById(vo.getId());
-		return new ModelAndView("member_register_ok", "mvo", mvo);
+		return new ModelAndView("member_join_result", "mvo", mvo);
 	}
 
 	/**
@@ -139,7 +139,7 @@ public class MemberController {
 	 * @return
 	 */
 	@RequestMapping("member_mypage.do")
-	public String mypage() {
+	public String showMypage() {
 		return "member_mypage";
 	}
 
@@ -215,7 +215,7 @@ public class MemberController {
 		HttpSession session = request.getSession(false);
 		if (session != null)
 			session.invalidate();
-		return "member_delete_ok";
+		return "member_delete_result";
 	}
 
 	/**
@@ -255,4 +255,7 @@ public class MemberController {
 			return password;
 		}
 	}
+	
+	
+	
 }
