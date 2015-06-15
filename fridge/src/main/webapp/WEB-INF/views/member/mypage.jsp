@@ -28,7 +28,28 @@
 	<br> email : ${sessionScope.mvo.email}
 	<br> 질문 : 가장 좋아하는 요리는 ?
 	<br> 답 : ${sessionScope.mvo.answer}
-	<br> 레벨 : ${sessionScope.mvo.level}
+	<br> 레벨 : 
+	<c:choose>
+		<c:when test="${sessionScope.mvo.level==6}">
+			관리자
+		</c:when>
+		<c:when test="${sessionScope.mvo.level==5}">
+			★★★★★
+		</c:when>
+		<c:when test="${sessionScope.mvo.level==4}">
+			★★★★
+		</c:when>
+		<c:when test="${sessionScope.mvo.level==3}">
+			★★★
+		</c:when>
+		<c:when test="${sessionScope.mvo.level==2}">
+			★★
+		</c:when>
+		<c:otherwise>
+			 ★
+		</c:otherwise>
+	</c:choose>
+	<%-- 그냥 레벨보이기 : 	${sessionScope.mvo.level} --%>
 	<br> 좋아요 : ${sessionScope.mvo.love}
 	<br>
 	<input type="button" value="수정하기" id="updateBtn">

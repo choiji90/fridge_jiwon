@@ -72,6 +72,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		answer=#{answer}
 	</select>
 
+	<!-- 전체 회원 목록 -->
 	<select id="getMemberList" resultMap="memberRM">
 		select member_id,name,nick,gender,email,member_level,register_date
 		FROM(
@@ -86,7 +87,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		) where page=#{value}
 	</select>
 
-	<select id="totalContent" resultType="int">
+	<select id="totalMember" resultType="int">
 		select count(*) from member
 	</select>
 	

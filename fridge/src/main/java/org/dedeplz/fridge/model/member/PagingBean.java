@@ -1,4 +1,4 @@
-package org.dedeplz.fridge.model;
+package org.dedeplz.fridge.model.member;
 /**
  * 페이징 로직을 위한 클래스 
  * @author inst
