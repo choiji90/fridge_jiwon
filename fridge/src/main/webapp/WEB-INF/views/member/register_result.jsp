@@ -7,8 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-가입성공!<br>
-${sessionScope.mvo.nick }님 <br>
-회원가입을 진심으로 환영합니다~
+가입성공!
 </body>
 </html>

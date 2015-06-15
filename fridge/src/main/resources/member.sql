@@ -1,10 +1,7 @@
-select *from member;
+select * from member;
 drop table member;
-update member set love=88, member_level=4 where member_id='subsub'
-select love from member where member_id='java' and password='1234'
+select * from recipe;
 
-select id from member where
-select member_id from member where name='김진선' and email='jinsun@gmail.com' and answer='김치볶음밥'; 
 create table member(
 	member_id varchar2(50) primary key,
 	password varchar2(50) not null,
@@ -33,22 +30,49 @@ create table recipe(
 )
  select * from member where member_id='java'
 insert into member(member_id, password, nick, name, email, gender, answer, member_level, register_date, love)
-values('java', '1234', 'abcd', '�쒖�誘�, 'java@gmail.com', 0, '�뚯뒪��, 5, sysdate, 0 )
-
-
-insert into member(member_id, password, nick, name, email, gender, answer, member_level, register_date, love)
-values('java3', '1234', 'abcd', 'java3', 'java@gmail.com', 2, '밥', 1, sysdate, 12)
+values('java', '1234', 'abcd', '한지민', 'java@gmail.com', 0, '파스타', 5, sysdate, 0 )
 
 insert into member(member_id, password, nick, name, email, gender, answer, member_level, register_date, love)
-values('java4', '1234', 'abcd', 'java3', 'java@gmail.com', 3, '밥', 1, sysdate, 57)
+values('java11', '1234', '진썬', '김진선', 'jinsun@gmail.com', 2, '김치볶음밥', 4, sysdate, 0 )
 
 insert into member(member_id, password, nick, name, email, gender, answer, member_level, register_date, love)
-values('java3', '1234', 'abcd', 'java3', 'java@gmail.com', 2, '밥', 1, sysdate, 12)
-
-
-
-
+values('java22', '1234', '진썬', '김진선', 'jinsun@gmail.com', 2, '버거킹', 3, sysdate, 0 )
 insert into member(member_id, password, nick, name, email, gender, answer, member_level, register_date, love)
-values('dindony', '1234', '吏꾩뜫', '源�쭊��, 'jinsun@gmail.com', 2, '源�튂蹂띠쓬諛�, 5, sysdate, 0 )
+values('helloo', '1234', '나나', '나나나', 'jinsun@gmail.com', 2, '수제비', 1, sysdate, 0 )
+insert into member(member_id, password, nick, name, email, gender, answer, member_level, register_date, love)
+values('hihihihi', '1234', '멍멍이', 'ㅇㅇㅇ', 'aaa@gmail.com', 1, '계란말이', 4, sysdate, 0 )
+insert into member(member_id, password, nick, name, email, gender, answer, member_level, register_date, love)
+values('zzzzz', '1234', '구리구리', '개구리', 'dfd@gmail.com', 2, '강낭콩', 3, sysdate, 0 )
+insert into member(member_id, password, nick, name, email, gender, answer, member_level, register_date, love)
+values('victorsj', '1234', '빅터승주', '임승주', 's@gmail.com', 1, '알촌', 3, sysdate, 0 )
+insert into member(member_id, password, nick, name, email, gender, answer, member_level, register_date, love)
+values('jiwon', '1234', '지원언니', '최지원', 'jiwon@gmail.com', 1, '삼겹살', 5, sysdate, 0 )
+insert into member(member_id, password, nick, name, email, gender, answer, member_level, register_date, love)
+values('aaaaa', '1234', 'ㅋㅋㅋㅋㅋ', 'ㄹㄹㄹ', 'fes@gmail.com', 2, '된장국', 1, sysdate, 0 )
+insert into member(member_id, password, nick, name, email, gender, answer, member_level, register_date, love)
+values('bbbbb', '1234', 'ㄷㄷㄷㄷ', 'ㄹㄹㄹ', 'ijd@gmail.com', 1, '피자', 2, sysdate, 0 )
+insert into member(member_id, password, nick, name, email, gender, answer, member_level, register_date, love)
+values('cccscd', '1234', 'ㄴㄴㄴㄴ', 'ㅇㄹㅇ', 'dfd@gmail.com', 2, '햄버거', 2, sysdate, 0 )
+
+
+
+
+  update member set member_level=5 	where member_id='cccscd';
+select member_id, member_level from member;
+
 
 select *from member;
+
+
+update member set password='1234', name='한지민ㅇㅇㅇ', nick='abcd',gender=2, email='java@gamil.com',answer='파스타' where member_id='java';
+   
+   
+   
+   
+   
+   select password from member where member_id='aaaa' and name='aaaa' and email='aaa@aaa.com' and answer='aaa';
+   select password from member where member_id='aaaa' and name='aaaa' and email='aaa@aaa.com' and answer='aaa';
+   
+ update member set love=10, member_level=1 where member_id='hihihi'
+   
+   

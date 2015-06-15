@@ -1,6 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
 <script type="text/javascript">
 function checkForm(){
    var agreeComp1=document.checkBoxForm.agree1;
@@ -14,12 +18,13 @@ function checkForm(){
             alert("가입약관의 내용에 동의하셔야 회원가입 하실 수 있습니다.");
 }
 $(document).ready(function(){
-      $("#cancelBtn").click(function(){
-            location.href="${initParam.root}home.do";
-         });
+	   $("#cancelBtn").click(function(){
+	         location.href="${initParam.root}home.do";
+	      });
 })
 </script>
-
+</head>
+<body>
 <회원가입약관> <br>
 <form name="checkBoxForm">
  <textarea cols="113" rows="10" name="content" readonly="readonly">
@@ -284,3 +289,6 @@ $(document).ready(function(){
    <input type="button" value="확인" onclick="checkForm()">
    <input type="button" value="취소" id="cancelBtn">
 </form>
+
+</body>
+</html>

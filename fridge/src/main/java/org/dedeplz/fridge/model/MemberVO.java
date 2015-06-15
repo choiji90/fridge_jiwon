@@ -1,6 +1,5 @@
-package org.dedeplz.fridge.model.member;
+package org.dedeplz.fridge.model;
 
-import javax.validation.constraints.Min;
 import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.Email;
@@ -18,7 +17,6 @@ public class MemberVO {
 	@Email
 	@NotEmpty
    private String email;
-	@Min(1)
    private int gender;
    @NotEmpty
    private String answer;

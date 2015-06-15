@@ -5,16 +5,28 @@ import java.util.List;
 public interface MemberService {
 
 	public  MemberVO findById(String id);
+	
 	public void registerMember(MemberVO vo);
+	
 	public String idCheck(String id);
+	
 	public MemberVO login(MemberVO vo);
-	public MemberVO myPage();
+
+	public void updateMember(MemberVO vo);
+
 	public void deleteMember(MemberVO vo);
-	void updateMember(MemberVO vo);
+
 	public String nickCheck(String nick);
-	public String findMyId(MemberVO vo);
+
 	public String findMyPassword(MemberVO vo);
-	ListVO getMemberList(String pageNo);
+
+	public String findMyId(MemberVO vo);
+
+	public  MemberListVO getMemberList(String pageNo);
+
+	public void levelChange(MemberVO vo);
+
 	public int loveCount(MemberVO vo);
+
 	public void updateMemberGrade(MemberVO vo);
 }
